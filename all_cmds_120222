@@ -1,0 +1,234 @@
+    1  cd
+    2  ls -alrt
+    3  tail update.log 
+    4  ls -alrt
+    5  ls -alrt
+    6  ls -alrt
+    7  ls -alrt
+    8  pwd
+    9  mkdir ansible
+   10  cd ansible/
+   11  ls -lart
+   12  vi ansible.cfg
+   13  vi inventory
+   14  ansible --version
+   15  pwd
+   16  cd
+   17  ls -lart
+   18  tail update.log 
+   19  ls -lart
+   20  cd .ssh/
+   21  ls -alrt
+   22  cat id_rsa.pub 
+   23  ssh ssm-user@10.91.139.182
+   24  ssh ssm-user@10.91.138.58
+   25  cd ../ansible/
+   26  ansible db_servers -m ping
+   27  ansible all -m ping
+   28  ansible dbservers -m ping
+   29  ansible webservers -m ping
+   30  ansible-doc -l
+   31  vi ansible.cfg 
+   32  ansible-doc -l
+   33  ansible-doc -l | grep group 
+   34  ansible-doc group
+   35  ansible webservers -m group -a "name=test"
+   36  ansible webservers -m group -a "name=test"
+   37  sh-4.2$ ansible webservers -m group -a "name=test"
+   38  [WARNING]: Platform linux on host 10.91.139.182 is using the discovered Python interpreter at /usr/bin/python3.8, but future installation
+   39  of another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+   40  core/2.12/reference_appendices/interpreter_discovery.html for more information.
+   41  10.91.139.182 | SUCCESS => {
+   42      "ansible_facts": {
+   43          "discovered_interpreter_python": "/usr/bin/python3.8"
+   44      },
+   45      "changed": false,
+   46      "gid": 1003,
+   47* 
+   48      "state": "present",
+   49      "system": false
+   50  ansible webservers -m group -a "name=test"
+   51  ansible webservers -m user -a "name=demo group=test"
+   52  ansible webservers -m shell -a "egrep test /etc/hosts"
+   53  ansible webservers -m shell -a "egrep test /etc/host"
+   54  ansible webservers -m shell -a "ls -lart /etc/h*"
+   55  ansible webservers -m shell -a "cat  /etc/hosts"
+   56* ansible webservers -m shell -a "ls "
+   57  ansible webservers -m shell -a "egrep test /etc/group"
+   58  ansible webservers -m shell -a "egrep demo  /etc/passwd"
+   59  ansible webservers -m user -a "name=demo group=test state=absent"
+   60  ansible webservers -m shell -a "egrep demo  /etc/passwd"
+   61  ansible webservers -m group -a "name=test state=absent"
+   62  ansible webservers -m group -a "name=test state=absent"
+   63  ansible webservers -m shell -a "egrep test /etc/group"
+   64  ansible webservers -m package -a "name=http state=present"
+   65  ansible webservers -m package -a "name=httpd state=present"
+   66  ansible webservers -m package -a "name=httpd state=present"
+   67  ansible webservers -m package -a "name=httpd state=absent"
+   68  ansible webservers -m yum -a "name=httpd state=present"
+   69  ansible webservers -m yum -a "name=httpd state=asent"
+   70  ansible webservers -m yum -a "name=httpd state=absent"
+   71  ansible webservers -m yum -a "name=httpd state=absent"
+   72  ansible webservers -m yum -a "name=httpd state=absent"
+   73  ansible webservers -m yum -a "name=httpd state=absent"
+   74  ansible webservers -m yum -a "name=httpd state=present"
+   75  ansible webservers -m yum -a "name=httpd state=absent"
+   76  ansible webservers -m yum -a "name=httpd state=absent"
+   77  vi example.yml
+   78  cat example.yml 
+   79  ansible-playbook example.yml 
+   80  ansible-playbook example.yml 
+   81  vi example.yml
+   82  cat example.yml 
+   83  ansible-playbook example.yml 
+   84  pwd
+   85  git --version
+   86  git -h
+   87  git init
+   88  ls -alrt
+   89  rm {
+   90  ls -alrt
+   91  git status
+   92  git add -A
+   93  git status
+   94  git commit -m "12.02.22, amelchio send my first ansible playbook"
+   95  sh-4.2$ cat example.yml
+   96  ---
+   97  - name: New user is created
+   98    hosts: webservers
+   99    become: true
+  100    tasks:
+  101      - name: user gets created
+  102        user:
+  103          name: test
+  104          state: absent
+  105  sh-4.2$ ansible-playbook example.yml
+  106  PLAY [New user is created] ***************************************************************************************************************
+  107  TASK [Gathering Facts] *******************************************************************************************************************
+  108  [WARNING]: Platform linux on host 10.91.139.182 is using the discovered Python interpreter at /usr/bin/python3.8, but future installation
+  109  of another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+  110  core/2.12/reference_appendices/interpreter_discovery.html for more information.
+  111  ok: [10.91.139.182]
+  112  TASK [user gets created] *****************************************************************************************************************
+  113  changed: [10.91.139.182]
+  114  PLAY RECAP *******************************************************************************************************************************
+  115  clear
+  116  ls -alrt
+  117  git commit -m "12.02.22, amelchio send my first ansible playbook"
+  118  git config --global user.email "Armin.Melchior@t-systems.com"
+  119  git config --global user.name "amelchio20"
+  120  git commit -m "12.02.22, amelchio send my first ansible playbook"
+  121  git remote add origin https://github.com/amelchio20/ansible-fund.git
+  122  git push -u origin master
+  123  git push -u origin master
+  124  git push -u origin master
+  125  git push -u origin master
+  126  # git remote add origin https://[USERNAME]:[TOKEN]@git.mycompany.com/[ORGANIZATION]/[REPO].git
+  127  git remote add origin https://amelchio20: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@github.com/amelchio20/ansible-fund.git
+  128  ls -lart
+  129  rm .git
+  130  rm -r .git
+  131  y
+  132  ls -lart
+  133  git remote add origin https://amelchio20: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@github.com/amelchio20/ansible-fund.git
+  134  git init
+  135  git remote add origin https://amelchio20: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@github.com/amelchio20/ansible-fund.git
+  136  git status
+  137  git add -A
+  138  git commit -m "12.02.22, amelchio send my first ansible playbook"
+  139  git status
+  140  git push -u origin master
+  141  history
+  142* 
+  143  cd ..
+  144  ls -alrt
+  145  rm -r ansible
+  146  ls -alrt
+  147  git clone https://github.com/amelchio20/ansible-fund.git
+  148  ls -lart
+  149  cd ansible-fund/
+  150  ls -alrt
+  151  cd ..
+  152  history
+  153  pwd
+  154  ls -alrt
+  155  pwd
+  156  ls -l
+  157  cd ansible-fund/
+  158  ls -lart
+  159  pwd
+  160  ansible webservers -m yum -a "name=httpd state=absent"
+  161  ansible webservers -m yum -a "name=httpd state=present"
+  162  pwd
+  163  ls -lart
+  164  vi ansible.cfg 
+  165  ansible webservers -m yum -a "name=httpd state=present"
+  166  ansible webservers -m yum -a "name=httpd state=absent"
+  167  ansible webservers -m yum -a "name=httpd state=absent"
+  168  git status
+  169  git add -A
+  170  git commit -m "12.02.21 amelchio changed inventory dir to ansible-fund"
+  171  git push
+  172  git remote add origin https://amelchio20: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@github.com/amelchio20/ansible-fund.git
+  173  git push -u origin master
+  174  vi testfile
+  175  git status
+  176  git add -A
+  177  git commit -m "12.02.21 amelchio push testfile"
+  178  git push
+  179  git status
+  180  ls -lart
+  181  rm testfile
+  182  cp example.yml varexample.yml
+  183  vi varexample.yml 
+  184  cat varexample.yml 
+  185  sh-4.2$ ansible-playbook varexample.yml
+  186  ansible-playbook varexample.yml
+  187  ansible webservers -m shell -a "egrep test  /etc/passwd"
+  188  ansible-playbook -e "username=student" varexample.yml
+  189  ansible webservers -m shell -a "egrep student  /etc/passwd"
+  190  history > ./all_cmds_120222
+  191  cp varexample.yml dictvarexample.yml
+  192  vi dictvarexample.yml 
+  193  cat dictvarexample.yml 
+  194  vi varexample.yml 
+  195  ansible-playbook varexample.yml
+  196  ansible webservers -m shell -a "egrep test  /etc/passwd"
+  197  vi varexample.yml 
+  198  ls -l
+  199  ansible-playbook dictvarexample.yml 
+  200  vi varexample.yml 
+  201  cat dictvarexample.yml 
+  202  vi dictvarexample.yml 
+  203  ansible-playbook dictvarexample.yml 
+  204  ansible webservers -m shell -a "egrep test  /etc/passwd"
+  205  tree
+  206  ls -lart
+  207  mkdir group_vars
+  208  ls -alrt
+  209  sudo yum install -y tree
+  210  tree
+  211  vi group_vars/webservers
+  212  tree
+  213  ls -alrt
+  214  cp dictvarexample.yml group-vars-dir-example.yml
+  215  vi group-vars-dir-example.yml 
+  216  vi dictvarexample.yml 
+  217  ansible-playbook dictvarexample.yml 
+  218  ansible-playbook dictvarexample.yml 
+  219  vi dictvarexample.yml 
+  220  vi group-vars-dir-example.yml 
+  221  ansible-playbook group-vars-dir-example.yml 
+  222  ansible webservers -m shell -a "egrep test  /etc/passwd"
+  223  tree
+  224  vi group_vars/webservers
+  225  cat group-vars-dir-example.yml 
+  226  vi group-vars-dir-example.yml 
+  227  ansible-playbook group-vars-dir-example.yml 
+  228  vi group_vars/webservers
+  229  vi group-vars-dir-example.yml 
+  230  ansible-playbook group-vars-dir-example.yml 
+  231  ansible webservers -m shell -a "egrep test  /etc/passwd"
+  232  cat  group_vars/webservers
+  233  ansible webservers -m shell -a "egrep test  /etc/passwd"
+  234  history > ./all_cmds_120222

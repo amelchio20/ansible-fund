@@ -1,0 +1,6 @@
+# variables for the webservers group
+
+    username:
+      test:
+        uname: test
+        description: Test User Account using group_vars webservers var file
