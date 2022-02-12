@@ -1,0 +1,10 @@
+[webservers]
+10.91.139.182
+
+[dbservers]
+10.91.138.58
+
+[allmyservers:children]
+webservers
+dbservers
+
