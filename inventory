@@ -1,11 +1,11 @@
 [webservers]
-10.91.140.182
+10.91.130.40
 
 [docker]
-10.91.140.182
+10.91.130.40
 
 [dbservers]
-10.91.132.196
+10.91.138.80
 
 [allmyservers:children]
 webservers
