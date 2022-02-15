@@ -1,0 +1,155 @@
+    1  cd
+    2  ls -lart
+    3  rm -r ansible-fund/
+    4  git config --global user.email "Armin.Melchior@t-systems.com"
+    5  git config --global user.name "amelchio20"
+    6  git clone https://github.com/amelchio20/ansible-fund.git
+    7  ls -lart
+    8  cd ansible-fund/
+    9  vi test
+   10  git status
+   11  git add -A
+   12  git commit -m "test"
+   13  git remote -v
+   14  git push
+   15  rm test
+   16  ls -lart
+   17  ansible webservers -m ping
+   18  ls -alrt .ssh
+   19  ls -alrt ../.ssh
+   20  cat  ../.ssh/id*pub
+   21  cat  ../.ssh/id_rsa*pub
+   22  cat ../cmd | grep -i key
+   23  cat ../cmds | grep -i key
+   24  cd ..
+   25  ssh keygen
+   26  ssh-keygen
+   27  cat  .ssh/id_rsa*pub
+   28  ssh ssm-user@10.91.140.182
+   29  bi ./ansible-fund/inventory 
+   30  vi ./ansible-fund/inventory 
+   31  ssh ssm-user@10.91.132.196
+   32  ssh ssm-user@10.91.132.196
+   33  vi ./ansible-fund/inventory
+   34  ansible webservers -m ping
+   35  cd ansible-fund/
+   36  ansible webservers -m ping
+   37  ansible-config dump --only-changed
+   38  ansible-doc ping
+   39  ansible all --limit db_servers -i inventory -m ping
+   40  ansible all --limit dbservers -i inventory -m ping
+   41  ansible all -m service -a "state=restarted name=sshd"
+   42  ansible webservers -m user -a "name=test password=secure_password state=present"
+   43  history > ../cmds
+   44  ansible webservers -m shell -a "egrep test /etc/passwd"
+   45  ansible webservers -m user -a "name=test group=test state=absent"
+   46  ansible webservers -m shell -a "egrep test /etc/passwd"
+   47  history > ../cmds
+   48  ansible webservers -m package -a "name=httpd state=present"
+   49  ansible webservers -m shell -a "ps -ef |  grep -i httpd"
+   50  ansible webservers -m shell -a "ps -ef |  grep -i http"
+   51  ansible webservers -m package -a "name=httpd state=absent"
+   52  ansible webservers -m shell -a "ps -ef |  grep -i http"
+   53  # ansible webservers -m package -a "name=httpd state=absent"
+   54  ls -l
+   55  cat group_vars/webservers
+   56  vi secret
+   57  ansible-vault encrypt secret
+   58  cat secret 
+   59  tree
+   60  vi encryt_example.yml
+   61  ansible-playbook encryt_example.yml
+   62  pwd
+   63  ansible-playbook --ask-vault-pass encryt_example.yml
+   64  vi group_vars/webservers
+   65  vi encryt_example.yml
+   66  ansible-playbook --ask-vault-pass encryt_example.yml
+   67  vi encryt_example.yml
+   68  ansible webservers -m shell -a "egrep test /etc/passwd"
+   69  ansible webservers -m user -a "name=test group=test state=absent"
+   70  ansible-playbook --ask-vault-pass encryt_example.yml
+   71  vi encryt_example.yml
+   72  ansible webservers -m user -a "name=test group=test state=absent"
+   73  ansible-playbook --ask-vault-pass encryt_example.yml
+   74  ansible-vault decrypt secret
+   75  cat secret 
+   76  ansible-vault rekey  secret
+   77  ansible-vault encrypt secret
+   78  ansible-vault rekey  secret
+   79  ansible-vault edit  secret
+   80  vi group_vars/dbservers
+   81  cat group_vars/dbservers 
+   82  vi loop_db_user_ex.yml
+   83  ansible-playbook loop_db_user_ex.yml
+   84  ansible dbservers -m shell -a "cat /etc/passwd"
+   85  vi conditional.yml
+   86  ansible-playbook conditional.yml
+   87  vi handler_reboot_ex.yml
+   88  ansible-playbook handler_reboot_ex.yml 
+   89  ansible webservers -m shell -a "who -r"
+   90* 
+   91  vi conditional.yml
+   92  ansible webservers -m shell -a "egrep test /etc/passwd"
+   93  ansible webservers -m user -a "name=test group=test state=absent"
+   94  ansible-playbook handler_reboot_ex.yml 
+   95  ansible webservers -m shell -a "who -r"
+   96  ansible webservers -m shell -a "egrep test /etc/passwd"
+   97  vi handler_reboot_ex.yml
+   98  ansible webservers -m shell -a "egrep member /etc/passwd"
+   99  ansible webservers -m user -a "name=member state=absent"
+  100  ansible webservers -m user -a "name=developer state=absent"
+  101  ansible webservers -m shell -a "tail /etc/passwd"
+  102  ansible-playbook handler_reboot_ex.yml 
+  103  ansible webservers -m shell -a "who -r"
+  104  ansible dbservers -m shell -a "who -r"
+  105  ansible webservers -m shell -a "tail /etc/passwd"
+  106  ansible-playbook --syntax-check handler_reboot_ex.yml
+  107  vi inventory 
+  108  ansibledocker --limit dbservers -i inventory -m ping
+  109  ansible docker --limit dbservers -i inventory -m ping
+  110  ansible docker --m ping
+  111  ansible docker -m ping
+  112  vim docker_install.yml
+  113  ansible-playbook docker_install.yml 
+  114  vim docker_install.yml
+  115  ansible-playbook docker_install.yml 
+  116  vim docker_install.yml
+  117  ansible-playbook docker_install.yml 
+  118  ansible docker -m shell -a "systemctl status docker"
+  119  vi Dockerfile
+  120  cat Dockerfile 
+  121  docker build -t image_demo:1.0 .
+  122  docker image ls
+  123  docker container ps
+  124  docker container ls 
+  125  docker container ls -a
+  126  docker build -t image_demo:1.1 .
+  127  docker container ls 
+  128  docker container ls -a
+  129  docker image ls
+  130  pip install docker
+  131  ansible docker -m shell -a "pip install docker"
+  132  whereis pip
+  133  /usr/local/bin/pip --version
+  134  ansible docker -m command -a "/usr/local/bin/pip install docker"
+  135  ansible docker -m command -a "/usr/local/bin/pip list"
+  136  history > ../cmds
+  137  ls -la c*
+  138  vi copy_dockerfile.yml
+  139* 
+  140  ansible-playbook copy_dockerfile.yml
+  141* 
+  142  cat copy_dockerfile.yml
+  143  ls -lat
+  144  ls -alrt
+  145  history > ../cmds
+  146  vi image_build.yml
+  147  ansible-playbook image_build.yml
+  148  cat image_build.yml 
+  149  vi copy_dockerfile.yml
+  150  ansible-playbook copy_dockerfile.yml 
+  151  ansible docker -m shell -a "ls -lart /home/ssm-user/ansible"
+  152  cat copy_dockerfile.yml 
+  153  ansible-playbook image_build.yml
+  154  ansible docker -m shell -a "docker image ls"
+  155  history > ../cmds

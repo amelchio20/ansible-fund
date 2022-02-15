@@ -4,3 +4,4 @@
       test:
         uname: test
         description: Test User Account using group_vars webservers var file
+        password: "{{ secret }}"

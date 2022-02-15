@@ -1,0 +1,22 @@
+---
+- name: Install docker on EC2
+  hosts: docker
+  become: true
+
+  tasks:
+  - name:  Install repository
+    yum:
+      name: epel-release
+      state: installed
+
+  - name: Install docker
+    yum:
+      name: docker
+      state: latest
+
+  - name: start and enable docker
+    systemd:
+      name: docker
+      state: started
+      enabled: yes
+

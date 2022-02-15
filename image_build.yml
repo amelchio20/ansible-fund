@@ -1,0 +1,13 @@
+---
+- name: create a container image
+  hosts: docker
+  become: true
+
+  tasks:
+    - name: create image from Dockerfile in the current directory
+      docker_image:
+        name: demo.image
+        build:
+          path: /home/ssm-user/ansible
+        source: build
+

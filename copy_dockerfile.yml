@@ -1,0 +1,16 @@
+---
+- name: Create ansible directory if it does not exist
+  hosts: docker
+  tasks:
+  - ansible.builtin.file:
+      path: /home/ssm-user/ansible
+      state: directory
+      mode: '0755'
+
+- name: copy Dockerfile to docker host
+  hosts: docker 
+  tasks:
+  - copy:
+      src: "Dockerfile"
+      dest: "/home/ssm-user/ansible/Dockerfile"
+

@@ -1,0 +1,12 @@
+---
+- name: New useris are created by loop
+  hosts: dbservers
+  become: true
+
+  tasks:
+    - name: user gets created via loop
+      user:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ db_users }}"
+
