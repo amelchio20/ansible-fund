@@ -1,0 +1,7 @@
+{# this is the template for our /etc/hosts file #}
+
+
+{% for host in groups['all'] %}
+{{ hostvars[host]['ansible_facts']['default_ipv4'] }}  {{ inventory_hostname }}
+{% endfor %}
+

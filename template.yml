@@ -1,0 +1,10 @@
+---
+- name: deploy files using Jinja2 template
+  hosts: all
+  become: true
+
+  tasks:
+    - name: deploy the message of the day templat
+      template:
+        ....
+        ....

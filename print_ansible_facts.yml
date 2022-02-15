@@ -1,0 +1,11 @@
+---
+- name: print all ansible facts vars and values
+  hosts: docker
+  tasks:
+    - name: display all facts
+      debug:
+        var: ansible_facts
+
+    - name: display ipv4 adresses only
+      debug:
+        var: ansible_facts['all_ipv4_addresses']
