@@ -1,0 +1,84 @@
+    1  ls -lart
+    2  cd
+    3  ls -lart
+    4  cd ansible-fund/
+    5  git config --global user.email "Armin.Melchior@t-systems.com"
+    6  git config --global user.name "amelchio20"
+    7  git status
+    8  git add -A
+    9  git commit -m "15.02.22, amelchio20 test file del"
+   10  git push
+   11  pwd
+   12  vi inventory
+   13  ansible all --limit dbservers -i inventory -m ping
+   14  cd ../.ssh
+   15  cat *pub
+   16  cd ../ansible-fund/
+   17  ansible all --limit dbservers -i inventory -m ping
+   18  ansible docker -m ping
+   19  ansible docker -m ping
+   20  ansible all -m ping
+   21  vi print_ansible_facts.yml
+   22  cat print_ansible_facts.yml 
+   23  ansible-playbook print_ansible_facts.yml 
+   24  ls -alrt /etc/motd
+   25  cat /etc/motd 
+   26  vi motd_example.yml
+   27  vi motd.j2
+   28  ansible-playbook motd_example.yml 
+   29  cat print_ansible_facts.yml 
+   30  vi motd_example.yml
+   31  cat print_ansible_facts.yml 
+   32  ansible-playbook motd_example.yml 
+   33  ansible docker  -m shell -a "cat /etc/motd"
+   34  cat motd.j2 
+   35  cat motd_example.yml 
+   36  ansible docker  -m shell -a "cat /etc/motd"
+   37  ansible-playbook motd_example.yml 
+   38  pwd
+   39  mkdir templates
+   40  mv *j2 ./templates/
+   41  cd templates/
+   42  ls -alrt
+   43  vi motd.j2 
+   44  cd ..
+   45  vi motd_example.yml 
+   46  cp motd_example.yml template.yml
+   47  vi template.yml
+   48  vi motd_example.yml 
+   49  ansible-playbook motd_example.yml 
+   50  vi motd_example.yml 
+   51  ansible-playbook motd_example.yml 
+   52  vi motd_example.yml 
+   53  ansible-playbook motd_example.yml 
+   54  ansible docker  -m shell -a "cat /etc/motd"
+   55  cat motd_example.yml 
+   56  cat ./templates/motd.j2 
+   57  ssh ssm-user@10.91.130.40
+   58  cd templates
+   59  vi motd.j2 
+   60  cd ..
+   61  ansible-playbook motd_example.yml 
+   62  ansible docker  -m shell -a "cat /etc/motd"
+   63  cat ./template/motd.j2
+   64  cat ./templates/motd.j2
+   65  cat inventory 
+   66  ls -l
+   67  ansible-playbook print_ansible_facts.yml > all_ansible_facts_vars_values.log
+   68  vi all_ansible_facts_vars_values.log 
+   69  vi all_ansible_facts_vars_values.log 
+   70  egrep -i defa *log
+   71  cd templates
+   72  ls -l
+   73  vi hosts.j2
+   74  cat hosts.j2 
+   75  ansible-playbook motd_example.yml 
+   76  pwd
+   77  cd ..
+   78  ansible-playbook motd_example.yml 
+   79  pwd
+   80  git status
+   81  git add -A
+   82  git commit -m "15.02.22, amelchio Jinja2 playbooks addes motd_ex.., print_ansi.. templates"
+   83  git push
+   84  history > ./all_cmds_150222_2
